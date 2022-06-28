@@ -2,9 +2,7 @@ package com.example.yzbkaka.things.db;
 
 import org.litepal.crud.LitePalSupport;
 
-/**
- * Created by yzbkaka on 19-4-7.
- */
+
 
 public class Log extends LitePalSupport {
     int id;

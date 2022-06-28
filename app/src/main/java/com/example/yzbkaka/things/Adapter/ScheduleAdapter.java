@@ -20,9 +20,6 @@ import java.util.List;
 
 import static com.example.yzbkaka.things.Schedule.ScheduleViewActivity.scheduleAdapter;
 
-/**
- * Created by yzbkaka on 19-4-13.
- */
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
     private List<Plan> mDataList;

@@ -21,9 +21,7 @@ import java.util.List;
 import static com.example.yzbkaka.things.Log.LogActivity.logAdapter;
 
 
-/**
- * Created by yzbkaka on 19-4-7.
- */
+
 
 public class LogAdapter extends RecyclerView.Adapter<LogAdapter.ViewHolder> {
     private List<String> mLogList;

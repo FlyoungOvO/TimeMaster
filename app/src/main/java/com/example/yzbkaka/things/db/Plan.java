@@ -4,9 +4,7 @@ import org.litepal.crud.LitePalSupport;
 
 import java.util.Date;
 
-/**
- * Created by yzbkaka on 19-4-4.
- */
+
 
 public class Plan extends LitePalSupport {
     int id;

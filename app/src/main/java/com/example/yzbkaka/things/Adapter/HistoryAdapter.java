@@ -12,9 +12,7 @@ import com.example.yzbkaka.things.db.Plan;
 
 import java.util.List;
 
-/**
- * Created by yzbkaka on 19-4-12.
- */
+
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
     private List<Plan> mDataList;

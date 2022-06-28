@@ -2,10 +2,6 @@ package com.example.yzbkaka.things;
 
 import android.view.View;
 
-/**
- * Created by yzbkaka on 19-5-10.
- */
-
 
 public  abstract class DoubleClickListener implements View.OnClickListener {
     private static final long DOUBLE_TIME = 1000;

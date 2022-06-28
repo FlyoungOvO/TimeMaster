@@ -33,9 +33,6 @@ import static com.example.yzbkaka.things.MainActivity.todayCount;
 import static com.example.yzbkaka.things.Today.NoteActivity.todayAdapter;
 
 
-/**
- * Created by yzbkaka on 19-4-4.
- */
 
 public class TodayAdapter extends RecyclerView.Adapter<TodayAdapter.ViewHolder> {
     private List<Plan> mDataList;

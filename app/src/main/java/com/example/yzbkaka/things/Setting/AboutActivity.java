@@ -19,7 +19,7 @@ public class AboutActivity extends AppCompatActivity {
         webView = (WebView)findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://github.com/yzbkaka/Schedule");
+        webView.loadUrl("https://github.com/FlyoungOvO/TimeMaster");
         setLightMode();
     }
 

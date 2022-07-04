@@ -5,10 +5,14 @@
       <map>
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_about.xml" value="0.17916666666666667" />
-        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_explain.xml" value="0.16666666666666666" />
+        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_alter_schedule.xml" value="0.17916666666666667" />
+        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_alter_today.xml" value="0.17916666666666667" />
+        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_explain.xml" value="0.1" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_log.xml" value="0.17916666666666667" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_schedule.xml" value="0.17916666666666667" />
+        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_schedule_view.xml" value="0.17916666666666667" />
+        <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_setting.xml" value="0.1" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/activity_start.xml" value="0.17916666666666667" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/schedule_item.xml" value="0.17916666666666667" />
         <entry key="..\:/MyProject/TimeMaster/app/src/main/res/layout/today_item.xml" value="0.17916666666666667" />

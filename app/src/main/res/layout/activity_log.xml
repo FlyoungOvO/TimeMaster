@@ -37,6 +37,15 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
                 android:background="@drawable/back"/>
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/clear"/>
         </RelativeLayout>
 
         <View

@@ -35,7 +35,8 @@
             android:name=".Schedule.ScheduleCreateActivity"
             android:theme="@style/MyTheme1"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".StartActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,14 +48,14 @@
         <service
             android:name=".Service.SendMessage"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity android:name=".Setting.ExplainActivity" />
         <activity
             android:name=".Schedule.AlterScheduleActivity"
             android:theme="@style/MyTheme1"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".Setting.AboutActivity"></activity>
+        <activity android:name=".Setting.AboutActivity" />
     </application>
 
 </manifest>

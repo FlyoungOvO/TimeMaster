@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/TimeMaster.iml" filepath="$PROJECT_DIR$/.idea/TimeMaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TimeMaster.iml" filepath="$PROJECT_DIR$/.idea/modules/TimeMaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TimeMaster.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TimeMaster.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jieba_android/TimeMaster.jieba_android.iml" filepath="$PROJECT_DIR$/.idea/modules/jieba_android/TimeMaster.jieba_android.iml" />
     </modules>
   </component>
 </project>

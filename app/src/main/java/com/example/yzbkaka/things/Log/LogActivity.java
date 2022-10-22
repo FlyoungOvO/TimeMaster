@@ -25,8 +25,7 @@ public class LogActivity extends AppCompatActivity {
     private List<String> logList = new ArrayList<>();  //log的列表
     private List<Log> dataList = new ArrayList<>();  //获得数据库中的Log
     private FloatingActionButton create;  //创建按钮
-   public static LogAdapter logAdapter;  //适配器
-
+    public static LogAdapter logAdapter;  //适配器
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -38,6 +38,14 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="DivideActionButton">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#856363</item>
+        <item name="android:gravity">center</item>
+    </style>
 
 
 

@@ -16,6 +16,9 @@ import com.example.yzbkaka.things.Log.LogActivity;
 import com.example.yzbkaka.things.Schedule.ScheduleViewActivity;
 import com.example.yzbkaka.things.Setting.SettingActivity;
 import com.example.yzbkaka.things.Today.NoteActivity;
+import com.example.yzbkaka.things.jieba.JiebaActivity;
+
+import jackmego.com.jieba_android.JiebaSegmenter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button history;
     private Button openDrawer;
     private Button setting;
+    private Button divideWords;
     DrawerLayout mDrawerLayout;
     public static int todayCount = 0;  //全局变量，统计today中显示的数量
 
@@ -37,11 +41,13 @@ public class MainActivity extends AppCompatActivity {
         schedule = (Button)findViewById(R.id.select_plan);
         log = (Button)findViewById(R.id.select_log);
         history = (Button)findViewById(R.id.select_history);
+        divideWords = (Button)findViewById(R.id.select_dividewords);
         openDrawer = (Button)findViewById(R.id.open_drawer);
         setting = (Button)findViewById(R.id.setting);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.draw_layout);
 
-
+        // 异步初始化
+//        JiebaSegmenter.init(getApplicationContext());
 
         today.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +77,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        divideWords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, JiebaActivity.class);
                 startActivity(intent);
             }
         });

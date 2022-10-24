@@ -37,7 +37,6 @@ public class LogActivity extends AppCompatActivity {
 
         logView.setAdapter(logAdapter);
 
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

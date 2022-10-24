@@ -35,7 +35,7 @@
             android:layout_gravity="center_vertical"
             android:background="#dcdcdc"/>
         <TextView
-            android:id="@+id/divide_action_translate"
+            android:id="@+id/divide_action_setplan"
             android:text="@string/divide_action_addtoplan"
             style="@style/DivideActionButton"
             android:enabled="false" />

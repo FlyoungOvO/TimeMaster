@@ -24,9 +24,9 @@ public class JiebaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jieba);
 
-        back = (Button)findViewById(R.id.back);
-        divideButton = (Button)findViewById(R.id.divideButton);
-        editText = (EditText)findViewById(R.id.editText);
+        back = findViewById(R.id.back);
+        divideButton = findViewById(R.id.divideButton);
+        editText = findViewById(R.id.editText);
 
         back.setOnClickListener(v -> finish());
 

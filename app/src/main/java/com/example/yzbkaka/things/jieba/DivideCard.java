@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.yzbkaka.things.R;
 
+import com.example.yzbkaka.things.db.Log;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
@@ -31,12 +32,13 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
     private Context mContext;
     private TextView mCopy;
     private TextView mSelectAll;
-    private TextView mTranslate;
-    private TextView mSearch;
+    private TextView msetplan;
+    private TextView msetlog;
     private TagFlowLayout mFlowLayout;
     private List<String> mAllWords;
     private Set<Integer> mSelectPosSet;
 
+    Log log = new Log();
 
     public DivideCard(Context context) {
         this(context, null);
@@ -49,15 +51,15 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
 
         mCopy = findViewById(R.id.divide_action_copy);
         mSelectAll = findViewById(R.id.divide_action_all);
-        mTranslate = findViewById(R.id.divide_action_translate);
-        mSearch = findViewById(R.id.divide_action_search);
+        msetplan = findViewById(R.id.divide_action_setplan);
+        msetlog = findViewById(R.id.divide_action_search);
         mFlowLayout = findViewById(R.id.ui_divide_flow);
 
         mFlowLayout.setOnSelectListener(this);
         mCopy.setOnClickListener(this);
         mSelectAll.setOnClickListener(this);
-        mTranslate.setOnClickListener(this);
-        mSearch.setOnClickListener(this);
+        msetplan.setOnClickListener(this);
+        msetlog.setOnClickListener(this);
     }
 
     public void setWords(List<String> words) {
@@ -88,10 +90,10 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
             selectAll();
         } else if (v == mCopy) {
             copyToClipboard();
-        } else if (v == mSearch) {
-            search();
-        } else if (v == mTranslate) {
-            translate();
+        } else if (v == msetplan) {
+            setplan();
+        } else if (v == msetlog) {
+            setlog();
         }
     }
 
@@ -123,12 +125,12 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
     private void applyActionsState() {
         if (mSelectPosSet == null || mSelectPosSet.isEmpty()) {
             mCopy.setEnabled(false);
-            mTranslate.setEnabled(false);
-            mSearch.setEnabled(false);
+            msetplan.setEnabled(false);
+            msetlog.setEnabled(false);
         } else {
             mCopy.setEnabled(true);
-            mTranslate.setEnabled(true);
-            mSearch.setEnabled(true);
+            msetplan.setEnabled(true);
+            msetlog.setEnabled(true);
         }
     }
 
@@ -140,7 +142,7 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
         Toast.makeText(mContext, "已复制到剪切板", Toast.LENGTH_SHORT).show();
     }
 
-    private void translate() {
+    private void setplan() {
         String content = getSelectedWords();
         String url;
         if (isContainChinese(content)) {
@@ -153,12 +155,13 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
         mContext.startActivity(intent);
     }
 
-    private void search() {
+    private void setlog() {
         String content = getSelectedWords();
-        String url = "https://www.baidu.com/s?word=" + content;
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        mContext.startActivity(intent);
+        if(!content.isEmpty()) {
+            log.setLogWrite(content);
+            log.save();
+            Toast.makeText(mContext,"添加成功！",Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

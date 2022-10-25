@@ -1,29 +1,43 @@
 package com.example.yzbkaka.things.jieba;
 
 
+import static android.support.v4.content.ContextCompat.startActivity;
+
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yzbkaka.things.R;
 
+import com.example.yzbkaka.things.Schedule.JiebaSchedule;
+import com.example.yzbkaka.things.Schedule.ScheduleActivity;
+import com.example.yzbkaka.things.Schedule.ScheduleCreateActivity;
 import com.example.yzbkaka.things.db.Log;
+import com.example.yzbkaka.things.db.Plan;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
 import com.zhy.view.flowlayout.TagFlowLayout;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,7 +52,12 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
     private List<String> mAllWords;
     private Set<Integer> mSelectPosSet;
 
+    private MaterialCalendarView calendarView;
+
     Log log = new Log();
+    Plan plan = new Plan();
+    Date mdate;
+    Calendar calendar = Calendar.getInstance();
 
     public DivideCard(Context context) {
         this(context, null);
@@ -144,15 +163,11 @@ public class DivideCard extends LinearLayout implements TagFlowLayout.OnSelectLi
 
     private void setplan() {
         String content = getSelectedWords();
-        String url;
-        if (isContainChinese(content)) {
-            url = "https://fanyi.baidu.com/#zh/en/" + content;
-        } else {
-            url = "https://fanyi.baidu.com/#en/zh/" + content;
+        if(!content.isEmpty()) {
+            Intent intent = new Intent(mContext, JiebaSchedule.class);
+            intent.putExtra("content",content);
+            mContext.startActivity(intent);
         }
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        mContext.startActivity(intent);
     }
 
     private void setlog() {
